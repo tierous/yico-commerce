@@ -4,8 +4,11 @@ This is ecommerce web application using yii framework. My aim is to make a templ
 # Table of Contents
 
 * [How to Install](#howto-install)
+* [Extension Used](#extension)
 * [Feature for Backend](#featurebackend)
 * [Feature for Frontend](#featurefrontend)
+* [Known Bugs](#knownbugs)
+* [Future Update](#futureupdate)
 
 # <a name="howto-install"></a>How to Install
 * Download zip file or clone to your computer.
@@ -15,40 +18,51 @@ This is ecommerce web application using yii framework. My aim is to make a templ
 * Admin page is on localhost/ecomm/index.php?r=admin username:eco password:eco
 * Edit the db connection password in protected/config/database with your mysql password
 
+# <a name="extension"></a>Extension Used
+* Image http://www.yiiframework.com/extension/image/
+
 # <a name="featurebackend"></a>Feature for Backend
+* LOGIN Admin
+* Admin Page
+* Admin Access Control
 * CRUD Category
 * CRUD Manufacturer
 * CRUD Product
 * CRUD Admin
-* LOGIN Admin
-* Admin Page
-* Admin Authorization
-* Manage Support Ticket for Admin
+* CRUD Deal
+* CRUD Support Ticket
 
-# <a name="featurecustomer"></a>Feature for Customer
+# <a name="featurefrontend"></a>Feature for Frontend
 * Store Home Page
-* Product Detail
-* Product Category
-* Account Page
 * Customer Login
 * Customer Register
-* Customer Change Password
-* Customer Address Book
+* Customer Access Control
+* Account Page
+* Change Password
+* Address Book
+* Add new Address
+* Update Exsisting Address
+* List Product
+* Product Detail
+* List Product by Category
 * List Order
 * Detail Order
+* Random Order Code
 * Payment Confirmation
-* Customer Authorization
 * Shopping Cart
-* Make random cart code
+* Random cart code
 * Add Product to Cart
 * Delete Product from Cart
-* Change Quantity
-* Add new Address
-* Finish Shop
-* Comment
-* Create New Comment (still bug cannot retrieve product id & customer id)
-* View Comment per Product (still bug, can only view via phpmyadmin)
-* View Comment per Customer (still bug, can only ciew via phpmyadmin)
+* Change Quantity from Cart
+* Checkouting
+* List Comment per Product
+* Create New Comment per Product (still bug cannot retrieve product id & customer id)
+* View Comment per Product and Customer
 * Support Ticket
 * Create New Ticket
 * View Ticket
+* Random Ticket Code
+
+# <a name="knownbugs"></a>knownbugs
+* Cannot add new comment on product
+* Deal price on product view still error(cannot retrieve product_id)

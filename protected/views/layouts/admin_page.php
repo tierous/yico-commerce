@@ -58,7 +58,8 @@ Released   : 20100308
 						<li><a href="<?php echo $this->createUrl('manufacturer/admin');?>">Manage Manufacturer</a></li>
                                                 <li><a href="<?php echo $this->createUrl('manageadmin/admin');?>">Manage Admin</a></li>
                                                 <li><a href="<?php echo $this->createUrl('SupportTicket/admin');?>">Manage Support Ticket</a></li>
-                                                <li><a href="<?php echo $this->createUrl('deal/admin');?>">Manage Deal</a></li>
+                                                <li><a href="<?php echo $this->createUrl('deal/admin');?>">Manage Deals</a></li>
+                                                <li><a href="<?php echo $this->createUrl('coupon/admin');?>">Manage Coupons</a></li>
 					</ul>
 				</li>
 			</ul>

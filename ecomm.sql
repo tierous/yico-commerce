@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 23 Des 2015 pada 14.53
+-- Generation Time: 23 Des 2015 pada 23.35
 -- Versi Server: 5.6.27-0ubuntu1
 -- PHP Version: 5.6.11-1ubuntu3.1
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_email`, `username`, `password`, `rule`, `last_login_time`) VALUES
-(1, 'eco@co.com', 'eco', 'e434dd9c7f573fb03924e0c4d3d44d45', 'admin', '2015-12-23 12:45:29');
+(1, 'eco@co.com', 'eco', 'e434dd9c7f573fb03924e0c4d3d44d45', 'admin', '2015-12-23 22:40:50');
 
 -- --------------------------------------------------------
 
@@ -328,6 +328,82 @@ INSERT INTO `product` (`product_id`, `category_id`, `manufacturer_id`, `product_
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `product_attribute`
+--
+
+CREATE TABLE IF NOT EXISTS `product_attribute` (
+  `product_attribute_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_option_id` int(11) NOT NULL,
+  `option_value_id` int(11) NOT NULL,
+  `option_value_price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `product_option`
+--
+
+CREATE TABLE IF NOT EXISTS `product_option` (
+  `product_option_id` int(11) NOT NULL,
+  `product_option_name` varchar(32) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `product_option`
+--
+
+INSERT INTO `product_option` (`product_option_id`, `product_option_name`) VALUES
+(1, 'Color'),
+(2, 'Size');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `product_option_value`
+--
+
+CREATE TABLE IF NOT EXISTS `product_option_value` (
+  `product_option_value_id` int(11) NOT NULL,
+  `product_option_value_name` varchar(64) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `product_option_value`
+--
+
+INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_value_name`) VALUES
+(1, 'Blue'),
+(2, 'Red'),
+(3, 'Small'),
+(4, 'Medium');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `product_option_value_to_product_option`
+--
+
+CREATE TABLE IF NOT EXISTS `product_option_value_to_product_option` (
+  `product_option_value_to_product_option_id` int(11) NOT NULL,
+  `product_option_id` int(11) NOT NULL,
+  `product_option_value_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `product_option_value_to_product_option`
+--
+
+INSERT INTO `product_option_value_to_product_option` (`product_option_value_to_product_option_id`, `product_option_id`, `product_option_value_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 3),
+(4, 2, 4);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `province`
 --
 
@@ -475,6 +551,34 @@ ALTER TABLE `product`
   ADD KEY `fk_product_manufacturer1_idx` (`manufacturer_id`);
 
 --
+-- Indexes for table `product_attribute`
+--
+ALTER TABLE `product_attribute`
+  ADD PRIMARY KEY (`product_attribute_id`),
+  ADD KEY `fk_product_attribute_product_option1_idx` (`product_option_id`),
+  ADD KEY `fk_product_attribute_product1_idx` (`product_id`);
+
+--
+-- Indexes for table `product_option`
+--
+ALTER TABLE `product_option`
+  ADD PRIMARY KEY (`product_option_id`);
+
+--
+-- Indexes for table `product_option_value`
+--
+ALTER TABLE `product_option_value`
+  ADD PRIMARY KEY (`product_option_value_id`);
+
+--
+-- Indexes for table `product_option_value_to_product_option`
+--
+ALTER TABLE `product_option_value_to_product_option`
+  ADD PRIMARY KEY (`product_option_value_to_product_option_id`),
+  ADD KEY `fk_product_option_value_to_product_option_product_option1_idx` (`product_option_id`),
+  ADD KEY `fk_product_option_value_to_product_option_product_option_va_idx` (`product_option_value_id`);
+
+--
 -- Indexes for table `province`
 --
 ALTER TABLE `province`
@@ -562,6 +666,26 @@ ALTER TABLE `orderdetail`
 ALTER TABLE `product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `product_attribute`
+--
+ALTER TABLE `product_attribute`
+  MODIFY `product_attribute_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `product_option`
+--
+ALTER TABLE `product_option`
+  MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `product_option_value`
+--
+ALTER TABLE `product_option_value`
+  MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `product_option_value_to_product_option`
+--
+ALTER TABLE `product_option_value_to_product_option`
+  MODIFY `product_option_value_to_product_option_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `province`
 --
 ALTER TABLE `province`
@@ -628,6 +752,20 @@ ALTER TABLE `orderdetail`
 ALTER TABLE `product`
   ADD CONSTRAINT `fk_product_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_product_manufacturer1` FOREIGN KEY (`manufacturer_id`) REFERENCES `manufacturer` (`manufacturer_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Ketidakleluasaan untuk tabel `product_attribute`
+--
+ALTER TABLE `product_attribute`
+  ADD CONSTRAINT `fk_product_attribute_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_product_attribute_product_option1` FOREIGN KEY (`product_option_id`) REFERENCES `product_option` (`product_option_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Ketidakleluasaan untuk tabel `product_option_value_to_product_option`
+--
+ALTER TABLE `product_option_value_to_product_option`
+  ADD CONSTRAINT `fk_product_option_value_to_product_option_product_option1` FOREIGN KEY (`product_option_id`) REFERENCES `product_option` (`product_option_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_product_option_value_to_product_option_product_option_value1` FOREIGN KEY (`product_option_value_id`) REFERENCES `product_option_value` (`product_option_value_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Ketidakleluasaan untuk tabel `support_ticket`

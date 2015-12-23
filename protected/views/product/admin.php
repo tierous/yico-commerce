@@ -21,7 +21,7 @@ $this->menu=array(
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
         'summaryText' => '',
-    'pager' => array(
+        'pager' => array(
         'header' => '',
         'firstPageLabel' => '| <',
         'lastPageLabel' => '> |',
@@ -51,7 +51,7 @@ $this->menu=array(
 		*/
 		array(
 			'class'=>'CButtonColumn',
-                        'template'=>'{update}&nbsp;&nbsp;{delete}'
-		),
+                        'template' => '{update}&nbsp;&nbsp;{delete}'
+        ),
 	),
 )); ?>

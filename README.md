@@ -5,43 +5,43 @@ This is ecommerce web application using yii framework. My aim is to make a templ
 
 * [How to Install](#howto-install)
 * [Extension Used](#extension)
-* [Feature for Backend](#featurebackend)
-* [Feature for Frontend](#featurefrontend)
+* [Backend Feature](#featurebackend)
+* [Frontend Feature](#featurefrontend)
 * [Known Bugs](#knownbugs)
 * [Future Update](#futureupdate)
 
 # <a name="howto-install"></a>How to Install
 * Download zip file or clone to your computer.
-* Extract file to your localhost htdocs folder or /var/www/html and rename the application to 'ecomm'.
-* Create database named 'ecomm' and import the sql file 'ecomm.sql'
-* Access the application with your browser
-* Admin page is on localhost/ecomm/index.php?r=admin username:eco password:eco
-* Edit the db connection password in protected/config/database with your mysql password
+* Extract file to your host root (htdocs or var/www/html) and rename the folder to "ecomm".
+* Create database named "ecomm" and import the sql file "ecomm.sql".
+* Access the application url with browser http:://localhost/ecomm
+* Edit the database connection password in protected/config/database with your mysl password
+* Admin page is on http:://localhost/ecomm/index.php?r=admin username : "eco" password : "eco"
 
 # <a name="extension"></a>Extension Used
 * Image http://www.yiiframework.com/extension/image/
 
-# <a name="featurebackend"></a>Feature for Backend
-* LOGIN Admin
-* Admin Page
-* Admin Access Control
-* CRUD Category
-* CRUD Manufacturer
-* CRUD Product
-* CRUD Admin
-* CRUD Deal
-* CRUD Support Ticket
+# <a name="featurebackend"></a>Backend Feature
+* Separate Admin Login
+* Separate Admin Page
+* Admin Action Access Control
+* Customer Action Access Control
+* Manage Category
+* Manage Manufacturer
+* Manage Product
+* Manage Admin
+* Manage Deal
+* Manage Support Ticket
+* Manage Coupon
+* Manage Custom Product
 
-# <a name="featurefrontend"></a>Feature for Frontend
-* Store Home Page
-* Customer Login
+# <a name="featurefrontend"></a>Backend Feature
+* Store Front Page
+* Separate Customer Login
 * Customer Register
-* Customer Access Control
 * Account Page
 * Change Password
-* Address Book
-* Add new Address
-* Update Exsisting Address
+* Manage Address Book
 * List Product
 * Product Detail
 * List Product by Category
@@ -56,13 +56,16 @@ This is ecommerce web application using yii framework. My aim is to make a templ
 * Change Quantity from Cart
 * Checkouting
 * List Comment per Product
-* Create New Comment per Product (still bug cannot retrieve product id & customer id)
+* Create New Comment per Product
 * View Comment per Product and Customer
-* Support Ticket
-* Create New Ticket
-* View Ticket
+* Manage Support Ticket
 * Random Ticket Code
 
 # <a name="knownbugs"></a>knownbugs
-* Cannot add new comment on product
+* Cannot add new comment on product (cannot retrieve product_id & customer_id)
 * Deal price on product view still error(cannot retrieve product_id)
+
+# <a name="futureupdate"></a>futureupdate
+* Integrate management of custom product into one screen
+* Add RewardPoint feature
+* Use responsive template for admin side

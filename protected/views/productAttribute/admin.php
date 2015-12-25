@@ -12,7 +12,9 @@ $this->menu = array(
 
 <h1>Manage Product Attributes</h1>
 <div>
-<?php echo CHtml::link('Add Product Attribute', array('ProductAttribute/create')); ?>
+<?php echo CHtml::link('Add Product Attribute', array('ProductAttribute/create')); ?> |
+<?php echo CHtml::link('Manage Product Option', array('ProductOption/admin')); ?> |
+<?php echo CHtml::link('Manage Option Value', array('ProductOptionValue/admin')); ?>
 </div>
 
 <?php

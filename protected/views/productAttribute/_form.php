@@ -7,11 +7,6 @@
 )); ?>
 
 <div>
-<?php echo CHtml::link('Manage Product Option', array('ProductOption/admin')); ?> |
-<?php echo CHtml::link('Manage Option Value', array('ProductOptionValue/admin')); ?>
-</div>
-
-<div>
 
 </div>
 

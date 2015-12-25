@@ -30,8 +30,16 @@ $this->widget('zii.widgets.grid.CGridView', array(
     ),
     'columns' => array(
         'product_option_value_to_product_option_id',
-        'product_option_id',
-        'product_option_value_id',
+        array(  'name'=>'product_option_id', 
+                        'type'=>'html', 
+            'value'=>'$data->productOption->product_option_name','sortable'=>TRUE,
+            'filter' => CHtml::listData(ProductOption::model()->findAll(),'product_option_id','product_option_name'),
+                ),           
+        array(  'name'=>'product_option_value_id', 
+                        'type'=>'html', 
+            'value'=>'$data->productOptionValue->product_option_value_name','sortable'=>TRUE,
+            'filter' => CHtml::listData(ProductOptionValue::model()->findAll(),'product_option_value_id','product_option_value_name'),
+                ),        
         array(
             'class' => 'CButtonColumn',
             'template' => '{update}&nbsp;&nbsp;{delete}'

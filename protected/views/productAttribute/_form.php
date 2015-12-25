@@ -6,6 +6,15 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
+<div>
+<?php echo CHtml::link('Manage Product Option', array('ProductOption/admin')); ?> |
+<?php echo CHtml::link('Manage Option Value', array('ProductOptionValue/admin')); ?>
+</div>
+
+<div>
+
+</div>
+
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>

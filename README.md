@@ -66,6 +66,5 @@ This is ecommerce web application using yii framework. My aim is to make a templ
 * Deal price on product view still error(cannot retrieve product_id)
 
 # <a name="futureupdate"></a>futureupdate
-* Integrate management of custom product into one screen
 * Add RewardPoint feature
 * Use responsive template for admin side

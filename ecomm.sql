@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 23 Des 2015 pada 23.35
+-- Generation Time: 02 Jan 2016 pada 17.41
 -- Versi Server: 5.6.27-0ubuntu1
 -- PHP Version: 5.6.11-1ubuntu3.1
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_email`, `username`, `password`, `rule`, `last_login_time`) VALUES
-(1, 'eco@co.com', 'eco', 'e434dd9c7f573fb03924e0c4d3d44d45', 'admin', '2015-12-23 22:40:50');
+(1, 'eco@co.com', 'eco', 'e434dd9c7f573fb03924e0c4d3d44d45', 'admin', '2016-01-02 16:26:08');
 
 -- --------------------------------------------------------
 
@@ -267,14 +267,17 @@ CREATE TABLE IF NOT EXISTS `order` (
   `customer_id` int(11) NOT NULL,
   `bank_transfer` varchar(50) NOT NULL,
   `payment_status` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `order`
 --
 
 INSERT INTO `order` (`order_id`, `order_code`, `order_date`, `address_book_id`, `customer_id`, `bank_transfer`, `payment_status`) VALUES
-(1, '1534320', '2015-12-09', 1, 1, 'MANDIRI 9999-9877-009 a.n Kuuga', 0);
+(1, '1534320', '2015-12-09', 1, 1, 'MANDIRI 9999-9877-009 a.n Kuuga', 0),
+(2, '1033520', '2015-12-25', 1, 1, 'MANDIRI 9999-9877-009 a.n Kuuga', 0),
+(3, '1345024', '2015-12-27', 1, 1, 'MANDIRI 9999-9877-009 a.n Kuuga', 0),
+(4, '1525454', '2015-12-27', 1, 1, 'BRI 77090-8898-989 a.n Kuuga', 0);
 
 -- --------------------------------------------------------
 
@@ -289,14 +292,19 @@ CREATE TABLE IF NOT EXISTS `orderdetail` (
   `product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `subtotal` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `orderdetail`
 --
 
 INSERT INTO `orderdetail` (`id`, `order_code`, `order_id`, `product_id`, `quantity`, `subtotal`) VALUES
-(1, '1534320', 1, 2, 3, 1500000);
+(1, '1534320', 1, 2, 3, 1500000),
+(2, '1033520', 2, 1, 1, 750000),
+(3, '1033520', 2, 2, 1, 500000),
+(4, '1345024', 3, 1, 3, 2250000),
+(5, '1345024', 3, 2, 1, 500000),
+(6, '1525454', 4, 2, 1, 500000);
 
 -- --------------------------------------------------------
 
@@ -315,7 +323,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_image` varchar(255) DEFAULT NULL,
   `date_added` datetime DEFAULT NULL,
   `date_modified` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `product`
@@ -337,7 +345,15 @@ CREATE TABLE IF NOT EXISTS `product_attribute` (
   `product_option_id` int(11) NOT NULL,
   `option_value_id` int(11) NOT NULL,
   `option_value_price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `product_attribute`
+--
+
+INSERT INTO `product_attribute` (`product_attribute_id`, `product_id`, `product_option_id`, `option_value_id`, `option_value_price`) VALUES
+(1, 1, 1, 1, 50000),
+(2, 2, 2, 4, -25000);
 
 -- --------------------------------------------------------
 
@@ -654,22 +670,22 @@ ALTER TABLE `manufacturer`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `orderdetail`
 --
 ALTER TABLE `orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `product_attribute`
 --
 ALTER TABLE `product_attribute`
-  MODIFY `product_attribute_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_attribute_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `product_option`
 --

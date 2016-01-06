@@ -2,7 +2,7 @@
 
 class SupportTicketController extends Controller {
 
-    public $layout = '//layouts/admin_page';
+    public $layout = '//layouts/admin_lte';
 
     public function actionView($id) {
         $this->render('view', array(

@@ -2,7 +2,7 @@
 
 class ProductController extends EcommController {
 
-    public $layout = '//layouts/admin_page'; //set layout    
+    public $layout = '//layouts/admin_lte'; //set layout    
 
     const URLUPLOAD = '/../images/products/'; //set path save gambar
 

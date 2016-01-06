@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Ecomm',
         'defaultController'=>'product',
-    //'theme'=>'AdminLTE',
+    'theme'=>'AdminLTE',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

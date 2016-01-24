@@ -4827,3 +4827,126 @@ Stack trace:
 #14 {main}
 REQUEST_URI=/ecomm/index.php?r=admin
 ---
+2016/01/13 19:47:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "province/admin".' in /var/www/html/ecomm/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('province/admin')
+#1 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/ecomm/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecomm/index.php?r=province/admin
+HTTP_REFERER=http://localhost/ecomm/index.php?r=product/admin
+---
+2016/01/13 19:48:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "province/admin".' in /var/www/html/ecomm/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('province/admin')
+#1 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/ecomm/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecomm/index.php?r=province/admin
+---
+2016/01/13 19:50:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/ecomm/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/ecomm/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/ecomm/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/ecomm/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/ecomm/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/ecomm/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/ecomm/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/ecomm/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('province/admin')
+#9 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/html/ecomm/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecomm/index.php?r=province/admin
+---
+2016/01/13 19:59:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/ecomm/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/ecomm/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/ecomm/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/ecomm/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/ecomm/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/ecomm/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/ecomm/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/ecomm/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('city/admin')
+#9 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/html/ecomm/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecomm/index.php?r=city/admin
+HTTP_REFERER=http://localhost/ecomm/index.php?r=province/admin
+---
+2016/01/14 00:23:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/html/ecomm/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/www/html/ecomm/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('order')
+#3 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/ecomm/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ecomm/index.php?r=order
+---
+2016/01/14 00:25:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "review".' in /var/www/html/ecomm/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('review')
+#1 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/ecomm/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecomm/index.php?r=review
+---
+2016/01/14 10:01:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paymentconfirmation".' in /var/www/html/ecomm/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('paymentconfirma...')
+#1 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/ecomm/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecomm/index.php?r=paymentconfirmation
+---
+2016/01/14 10:01:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "PaymentConfirmation/admin".' in /var/www/html/ecomm/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('PaymentConfirma...')
+#1 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/ecomm/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecomm/index.php?r=PaymentConfirmation/admin
+---
+2016/01/19 22:13:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action ".".' in /var/www/html/ecomm/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CController.php(270): CController->missingAction('.')
+#1 /var/www/html/ecomm/framework/web/CWebApplication.php(282): CController->run('.')
+#2 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('account/.')
+#3 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/ecomm/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ecomm/index.php?r=account/.
+HTTP_REFERER=http://localhost/ecomm/index.php?r=account
+---
+2016/01/19 22:13:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action ".".' in /var/www/html/ecomm/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CController.php(270): CController->missingAction('.')
+#1 /var/www/html/ecomm/framework/web/CWebApplication.php(282): CController->run('.')
+#2 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('account/.')
+#3 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/ecomm/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ecomm/index.php?r=account/.
+HTTP_REFERER=http://localhost/ecomm/index.php?r=account/info
+---
+2016/01/21 19:16:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paymentconfirmation".' in /var/www/html/ecomm/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('paymentconfirma...')
+#1 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/ecomm/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecomm/index.php?r=paymentconfirmation
+---
+2016/01/21 19:18:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request ".".' in /var/www/html/ecomm/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/ecomm/framework/web/CWebApplication.php(141): CWebApplication->runController('.')
+#1 /var/www/html/ecomm/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/ecomm/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecomm/index.php?r=.
+HTTP_REFERER=http://localhost/ecomm/index.php?r=cart/finishshop
+---
